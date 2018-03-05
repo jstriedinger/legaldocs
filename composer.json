@@ -1,0 +1,12 @@
+{
+    "name": "joserafael/formatealo",
+    "require": {
+        "phpoffice/phpword": "^0.14.0"
+    },
+    "authors": [
+        {
+            "name": "Jose Striedinger",
+            "email": "jstriedinger2090@gmail.com"
+        }
+    ]
+}

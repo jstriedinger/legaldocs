@@ -76,7 +76,7 @@ __webpack_require__(2);
 
 $(document).ready(function () {
 
-	$("form.process").submit(function (e) {
+	$("form.process:not([id])").submit(function (e) {
 		e.preventDefault();
 		var btn = $(this).find('.button[type="submit"]');
 		btn.toggleClass('is-loading');
@@ -85,7 +85,6 @@ $(document).ready(function () {
 		$.each($(this).serializeArray(), function () {
 			if (this.name != "template") inputs["" + this.name] = this.value;
 		});
-		console.log(inputs);
 		var file = $(this).find('select[name="template"]').val();
 		$.ajax({
 			url: "./dist/functions.php",
@@ -105,6 +104,60 @@ $(document).ready(function () {
 				console.log(xhr);
 				console.log(status);
 				console.log(_error);
+			},
+			complete: function complete() {
+				btn.toggleClass('is-loading');
+			}
+		});
+	});
+	$("form.process#estatutos").submit(function (e) {
+		e.preventDefault();
+		var btn = $(this).find('.button[type="submit"]');
+		btn.toggleClass('is-loading');
+
+		var inputs = {};
+		var accionistas_info = "";
+		$.each($(this).serializeArray(), function () {
+			//Vamos creando el "accionista1"
+			if (this.name != "template") inputs["" + this.name] = this.value;
+		});
+		if (inputs["accionista1_name"] != "") {
+			accionistas_info += inputs["accionista1_name"] + ", mayor de edad, domiciliado (a) en la ciudad de " + inputs["accionista1_city"] + ", " + inputs["accionista1_country"] + ",  identificado con cédula de ciudadanía No " + inputs["accionista1_id"];
+		}
+		if (inputs["accionista2_name"] != "") {
+			accionistas_info += ", " + inputs["accionista2_name"] + ", mayor de edad, domiciliado (a) en la ciudad de " + inputs["accionista2_city"] + ", " + inputs["accionista2_country"] + ",  identificado con cédula de ciudadanía No " + inputs["accionista2_id"];
+		}
+		if (inputs["accionista3_name"] != "") {
+			accionistas_info += ", " + inputs["accionista3_name"] + ", mayor de edad, domiciliado (a) en la ciudad de " + inputs["accionista3_city"] + ", " + inputs["accionista3_country"] + ",  identificado con cédula de ciudadanía No " + inputs["accionista3_id"];
+		}
+		if (inputs["accionista4_name"] != "") {
+			accionistas_info += ", " + inputs["accionista4_name"] + ", mayor de edad, domiciliado (a) en la ciudad de " + inputs["accionista4_city"] + ", " + inputs["accionista4_country"] + ",  identificado con cédula de ciudadanía No " + inputs["accionista4_id"];
+		}
+
+		inputs["accionistas_info"] = accionistas_info;
+
+		console.log(inputs);
+
+		//Ahora hay que crear la variables accionistas
+		var file = $(this).find('select[name="template"]').val();
+		$.ajax({
+			url: "./dist/functions.php",
+			type: 'POST',
+			dataType: 'json',
+			data: { vars: JSON.stringify(inputs), template: file },
+			success: function success(data, textStatus, xhr) {
+				if (data.status) {
+					var downloadUrl = "./dist/" + file + ".docx";
+					var downloadFrame = document.createElement("iframe");
+					downloadFrame.setAttribute('src', downloadUrl);
+					downloadFrame.setAttribute('class', "screenReaderText");
+					document.body.appendChild(downloadFrame);
+				}
+			},
+			error: function error(xhr, status, _error2) {
+				console.log(xhr);
+				console.log(status);
+				console.log(_error2);
 			},
 			complete: function complete() {
 				btn.toggleClass('is-loading');

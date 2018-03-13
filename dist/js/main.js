@@ -133,10 +133,7 @@ $(document).ready(function () {
 		if (inputs["accionista4_name"] != "") {
 			accionistas_info += ", " + inputs["accionista4_name"] + ", mayor de edad, domiciliado (a) en la ciudad de " + inputs["accionista4_city"] + ", " + inputs["accionista4_country"] + ",  identificado con cédula de ciudadanía No " + inputs["accionista4_id"];
 		}
-
 		inputs["accionistas_info"] = accionistas_info;
-
-		console.log(inputs);
 
 		//Ahora hay que crear la variables accionistas
 		var file = $(this).find('select[name="template"]').val();

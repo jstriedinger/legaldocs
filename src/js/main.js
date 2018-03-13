@@ -83,10 +83,7 @@ $(document).ready(function(){
 			inputs["accionista4_id"]
 
 		}
-
 		inputs["accionistas_info"] = accionistas_info;
-
-		console.log(inputs);
 
 		//Ahora hay que crear la variables accionistas
 		var file = $(this).find(

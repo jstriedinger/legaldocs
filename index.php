@@ -581,6 +581,7 @@
 								    </div>
 								  </div>
 								</div>
+								<label for="" class="label is-small">Gerente #2 (O pues, suplente del gerente)</label>
 								<div class="field is-horizontal">
 								  <div class="field-body">
 								    <div class="field">
@@ -629,7 +630,11 @@
 										<div class="select is-small">
 											<select name="template" required>
 											  <option value="Estatutos-adm-neutra" selected>Admin Neutral Normal</option>
-											  <option value="PoderEspecialPJ">Para Persona Juridica</option>
+											  <option value="Estatutos-adm-neutra-sin-cuantia">Admin Neutral Sin Cuantia</option>
+											  <option value="Estatutos-adm-compartida" >Admin Compartida Normal</option>
+											  <option value="Estatutos-adm-compartida">Admin Compartida Sin Cuantia</option>
+											  <option value="Estatutos-a-favor-gerente">A favor del Gerente</option>
+											  <option value="Estatutos-a-favor-gerente-sin-cuantia">A favor del Gerente SIN cuantia</option>
 											</select>
 										</div>
 									</div>

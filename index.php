@@ -456,11 +456,6 @@
 								    </div>
 								    <div class="field">
 								      <p class="control is-expanded">
-								        <input class="input is-small" type="text" name="company_id" placeholder="Registro Mercantil">
-								      </p>
-								    </div>
-								    <div class="field">
-								      <p class="control is-expanded">
 								        <input class="input is-small" type="text" name="company_city" placeholder="Ciudad">
 								      </p>
 								    </div>

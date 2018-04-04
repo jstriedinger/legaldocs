@@ -1,2 +1,7 @@
 @import '~bulma/css/bulma.css';
 @import '~bulma-extensions/bulma-accordion/dist/bulma-accordion.min.css';
+
+
+.accordions .accordion.is-active .accordion-body {
+    max-height: 1000em;
+}

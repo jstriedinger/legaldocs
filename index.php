@@ -3305,6 +3305,5 @@
 			  </article>
 		</div>
 	</section>
-	<script type="text/javascript" src="./node_modules/bulma-extensions/bulma-accordion/dist/bulma-accordion.min.js"></script>
 </body>
 </html>

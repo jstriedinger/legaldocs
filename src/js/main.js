@@ -1,5 +1,7 @@
 import "jquery";
 import "../scss/main.scss";
+import bulmaAccordion from '../../node_modules/bulma-extensions/bulma-accordion/dist/bulma-accordion.min.js';
+
 
 var typingTimer; 
 function titulares_beneficiarios_info(inputs)

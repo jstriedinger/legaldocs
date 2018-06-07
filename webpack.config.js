@@ -54,7 +54,7 @@ const config = {
         ],
         host: 'localhost',
         port: 3000,
-        proxy: 'http://localhost/formatealo',
+        proxy: 'http://localhost/legaldocs',
         logPrefix: 'webpack',
         logLevel: 'debug',
         ghostMode: false

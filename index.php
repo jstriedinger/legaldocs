@@ -3039,6 +3039,25 @@
 			    <div class="accordion-body">
 			      <div class="accordion-content">
 					<form action="" method="POST" class="process">
+						<div class="columns">
+							<div class="column is-half">
+								<div class="field is-horizontal">
+									<div class="field-body">
+										<div class="field">
+										  <p class="control is-expanded">
+										    <input class="input is-small" type="text" name="sociedad_tipo" placeholder="Tipo de sociedad (ej. Sociedad Comercial por Acciones Simplificada)">
+										  </p>
+										</div>
+										<div class="field">
+										  <p class="control is-expanded">
+										    <input class="input is-small" type="text" name="titulo_num" placeholder="Num de titulo Ej. 001">
+										  </p>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
 				      	<div class="columns">
 				      		<div class="column is-half">
 				      			<h1 class="title is-5">Si es Doc privado:</h1>
@@ -3102,6 +3121,7 @@
 										</div>
 									</div>
 								</div>
+								
 				      		</div>
 				      	</div>
 				      	<div class="columns is-centered">

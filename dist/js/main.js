@@ -346,6 +346,7 @@ $(document).ready(function () {
 			dataType: 'json',
 			data: { vars: JSON.stringify(inputs), template: file },
 			success: function success(data, textStatus, xhr) {
+				console.log(data);
 				if (data.status) {
 					var downloadUrl = "./dist/" + file + ".docx";
 					var downloadFrame = document.createElement("iframe");

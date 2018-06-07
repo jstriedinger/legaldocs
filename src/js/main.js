@@ -331,6 +331,7 @@ $(document).ready(function(){
 			dataType: 'json',
 			data: {vars: JSON.stringify(inputs),template: file},
 			success: function(data, textStatus, xhr){
+				console.log(data)
 				if(data.status)
 				{
 					var downloadUrl = "./dist/"+file+".docx";
